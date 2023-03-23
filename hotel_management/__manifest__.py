@@ -6,7 +6,7 @@
     Hotel management system for full flage soultion control.
     """,
     'sequence': 0,
-    'depends': ['base', 'mail', 'website', 'report_xlsx'],
+    'depends': ['base', 'mail', 'website', 'report_xlsx', 'hr'],
     'summary': "Hotel Management",
     'author': "Heliconia",
     'category': 'Management',
@@ -27,6 +27,7 @@
             'views/hotel_tower_rooms_view.xml',
             'views/hotel_website_home.xml',
             'views/hotel_website_form.xml',
+            'views/hotel_inherit_employee_view.xml',
             'views/menuitems.xml',
             'report/hotel_guest_detail_template.xml',
             'report/report.xml'

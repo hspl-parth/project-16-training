@@ -3,3 +3,4 @@ from . import hotel_tower
 from . import hotel_staff
 from . import hotel_guest_documents_lines
 from . import hotel_guest_documents
+from . import hotel_inherite_employee
