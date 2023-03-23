@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_user_information_form" model="ir.ui.view">
+        <field name="name">user.information.from</field>
+        <field name="model">user.information</field>
+        <field name="arch" type="xml">
+            <form string="User Information">
+                <sheet>
+                    <group colspan="4" col="4">
+                        <field name="employee_id" required="1"/>
+                        <field name="pc_name" required="1"/>
+                        <field name="pc_type" />
+                    </group>
+                        <group colspan="4" col="4">
+                        <field name="domain_user" required="1"/>
+                        <field name="password" password="True"/>
+                        <field name="vpn_user"/>
+                        <field name="vpn_password" password="True"/>
+                        <field name="email"/>
+                        <field name="email_password" password="True"/>
+                        <field name="new_local_user"/>
+                        <field name="Local_user_password" password="True"/>
+                        <field name="ip"/>
+                        <field name="ext"/>
+                    </group>                  
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_user_information_tree" model="ir.ui.view">
+        <field name="name">user.information.tree</field>
+        <field name="model">user.information</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="pc_name"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_user_information_search" model="ir.ui.view">
+            <field name="name">loan.request.search</field>
+            <field name="model">user.information</field>
+            <field name="arch" type="xml">
+                <search>  
+                    <field name="pc_name"/> 
+                    <field name="domain_user"/> 
+                    <field name="vpn_user"/>
+                    <field name="email"/> 
+                    <field name="new_local_user"/>  
+                    <separator/>
+                    <filter string="Desktop User" name="desktop_user" domain="[('pc_type', '=', 'desktop')]"/>
+                    <filter string="Laptop User" name="laptop_user" domain="[('pc_type', '=', 'laptop')]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="pc_type" string="PC Type" domain="[]" context="{'group_by': 'pc_type'}"/>
+                        <filter name="employee_id" string="Employee" domain="[]" context="{'group_by': 'employee_id'}"/>
+                        <filter name="pc_name" string="PC Name" domain="[]" context="{'group_by': 'pc_name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record> -->
+
+    <record id="action_user_information" model="ir.actions.act_window">
+        <field name="name">User Information</field>
+        <field name="res_model">user.information</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_user_information_tree"></field>
+    </record>
+
+    <menuitem id="menu_user_information" 
+        name="User Information"
+        action="action_user_information"
+        parent="helpdesk.menu_helpdesk_root"
+        sequence="15"/>
+
+</odoo>

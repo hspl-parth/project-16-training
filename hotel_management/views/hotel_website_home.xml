@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Template for home and contactus -->
+    <template id="hotel_website_guest" name="Hotel Guest">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'guest'"/>
+            <div id="wrap" class="oe_structure oe_empty"/>
+            <div class="container">
+                <h2>Guests</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Referance</th>
+                            <th scope="col">Guest Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Contact number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="guests" t-as="guest">
+                        <tr>
+                            <th scope="row"><t t-esc="guest.reference"/></th>
+                            <td><t t-esc="guest.name"/></td>
+                            <td><t t-esc="guest.age"/></td>
+                            <td><t t-esc="guest.contact_number"/></td>
+                        </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

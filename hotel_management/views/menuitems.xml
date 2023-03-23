@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<menuitem id="menu_hotel_management_root" 
+			name="Hotel Management"
+			sequence="10"/>
+
+		<menuitem id="menu_hotel_guest_root" 
+		        name="Hotel Guest"
+		        parent="menu_hotel_management_root"
+		        sequence="9"/>
+
+		<menuitem id="menu_hotel_tower_root" 
+		        name="Building Tower"
+		        parent="menu_hotel_management_root"
+		        sequence="10"/>
+
+		<menuitem id="menu_hotel_staff" 
+		        name="Staff"
+		        parent="menu_hotel_management_root"
+		        sequence="10"
+		        />
+
+		<menuitem id="menu_hotel_configuration" 
+		        name="Configuration"
+		        parent="menu_hotel_management_root"
+		        sequence="11"
+		        />
+
+		<menuitem id="menu_hotel_guest" 
+		        name="Guest"
+		        action="action_hotel_guest"
+		        parent="menu_hotel_guest_root"
+		        sequence="10"/>
+
+		<menuitem id="menu_hotel_documents" 
+		        name="Documents"
+		        action="action_hotel_guest_documents"
+		        parent="menu_hotel_configuration"
+		        sequence="10"
+		        />
+
+		<menuitem id="menu_hotel_staff_cleaning" 
+		        name="Cleaning"
+		        action="action_hotel_staff_cleaning"
+		        parent="menu_hotel_staff"
+		        />
+
+		<menuitem id="menu_hotel_staff_management" 
+		        name="Management"
+		        action="action_hotel_staff_management"
+		        parent="menu_hotel_staff"
+		        />
+
+		<menuitem id="menu_hotel_staff_waiter" 
+		        name="Waiters"
+		        action="action_hotel_staff_waiter"
+		        parent="menu_hotel_staff"
+		        />
+
+		<menuitem id="menu_hotel_staff_security" 
+		        name="Security"
+		        action="action_hotel_staff_security"
+		        parent="menu_hotel_staff"
+		        />
+
+		<menuitem id="menu_hotel_tower_rooms" 
+		        name="Tower Rooms"
+		        action="action_hotel_tower_rooms"
+		        parent="menu_hotel_tower_root"
+		        sequence="10"/>
+
+		<menuitem id="menu_hotel_tower" 
+		        name="Towers"
+		        action="action_hotel_tower"
+		        parent="menu_hotel_tower_root"
+		        sequence="10"/>
+
+    </data>
+</odoo>

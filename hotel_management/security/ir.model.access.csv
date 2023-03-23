@@ -1,0 +1,11 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_hotel_guest_user,access.hotel.guest.user,model_hotel_guest,base.group_user,1,1,1,1
+access_hotel_tower_user,access.hotel.tower.user,model_hotel_tower,base.group_user,1,1,1,1
+access_hotel_staff_cleaning_user,access.hotel.staff.cleaning.user,model_hotel_staff_cleaning,base.group_user,1,1,1,1
+access_hotel_staff_management_user,access.hotel.staff.management.user,model_hotel_staff_management,base.group_user,1,1,1,1
+access_hotel_staff_security_user,access.hotel.staff.security.user,model_hotel_staff_security,base.group_user,1,1,1,1
+access_hotel_staff_waiter_user,access.hotel.staff.waiter.user,model_hotel_staff_waiter,base.group_user,1,1,1,1
+access_guest_documents_lines_user,access.guest.documents.lines.user,model_guest_documents_lines,base.group_user,1,1,1,1
+access_guest_documents_user,access.guest.documents.user,model_guest_documents,base.group_user,1,1,1,1
+access_hotel_tower_rooms_lines_user,access.hotel.tower.rooms.lines.user,model_hotel_tower_rooms_lines,base.group_user,1,1,1,1
+access_hotel_guest_cost_wizard_user,access.hotel.guest.cost.wizard.user,model_hotel_guest_cost_wizard,base.group_user,1,1,1,1

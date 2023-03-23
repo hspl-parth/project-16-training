@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="hotel_guest_cost_wizard_form" model="ir.ui.view">
+        <field name="name">hotel.guest.cost.wizard.form</field>
+        <field name="model">hotel.guest.cost.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Tentative amount">
+                <group>
+                    <group>
+                        <field name="guest_id" readonly="1" force_save="1"/>
+                        <field name="check_in_time"/>
+                        <field name="check_out_time"/>
+                        <field name="final_total"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="confirm_check_in" string="Submit" type="object" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hotel_guest_cost_wizard" model="ir.actions.act_window">
+        <field name="name">Tentative Amount</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hotel.guest.cost.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="hotel_guest_cost_wizard_form"/>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

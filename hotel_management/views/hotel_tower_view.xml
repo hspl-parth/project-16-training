@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="view_hotel_tower_form" model="ir.ui.view">
+        <field name="name">hotel.tower.from</field>
+        <field name="model">hotel.tower</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_count_guest_intower" type="object"
+                            class="oe_stat_button" icon="fa-building">
+                            <div class="o_stat_info">
+                                <field name="guest_count" class="o_stat_value"/>
+                                <span class="o_stat_text"> Guest</span>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- <field name="photo" widget="image" class="oe_avatar"/> -->
+                    <div class="oe_title mb24 mt24">
+                        <label for="name" string="Tower name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group string="general">
+                            <field name="state"/>
+                            <field name="construction_agency_name"/>
+                            <field name="establish_day"/>
+                            <!-- <field name="room_type_one"/>
+                            <field name="nos_room_type_one"/>
+                            <field name="room_type_two"/> -->
+                        </group>
+                        <group string="Management">
+                            <field name="staff"/>
+                            <field name="manager_name_id"/>
+                            <field name="cleaning_agency_name"/>
+                            <field name="cleaning_agency_person"/>
+                            <field name="representative"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name='hotel_room' string="Rooms">
+                            <field name="tower_rooms_lines_ids">
+                                <tree>
+                                    <field name="room"/>
+                                    <field name="room_type"/>
+                                    <field name="nos_room"/>
+                                    <field name="room_price"/>
+                                    <field name="available_rooms"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>                  
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hotel_tower_tree" model="ir.ui.view">
+        <field name="name">hotel.tower.tree</field>
+        <field name="model">hotel.tower</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="establish_day"/>
+                <field name="manager_name_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hotel_tower" model="ir.actions.act_window">
+        <field name="name">Hotel Tower</field>
+        <field name="res_model">hotel.tower</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_hotel_tower_tree"></field>
+    </record>
+</data>
+</odoo>
